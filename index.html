@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zachary Hunter Craig</title>
-    <link rel="stylesheet" href="./CSS/Stylesheet.css">
+    <link rel="styleSheet" href="./CSS/StyleSheet.css">
 </head>
 <body class="Background">
 <!-- Nav Bar -->    
     <div class="Navbar">
         <a href="#Home">Home</a>
+        <a href="#SlideShow">SldieShow</a>
         <a href="#About">About</a>
         <a href="#Github">GitHub</a>
-        <a href="#Contact">Contact</a>
+        <a onclick="openForm()" ondblclick="closeForm()" href="#Contact">Contact</a>
     </div>
 <!-- End Nav bar -->
 
@@ -43,6 +44,66 @@
                 </strong>
             </p>
     </div>
+<!-- SlideShow Section -->
+<div id="SlideShow">
+    <div id="SlideShow_Background">
+        <div id="Slidesshow_Container">
+
+            <div class="mySlides fade">
+                <div id="Slide_Number">1/6</div>
+                    <img class="Slide_Show_Images" src="images/Picture_of_You.jpg" style="width:100%;">
+                        <div class="text">This is very cleary a picture of me</div>      
+            </div>
+
+            <div class="mySlides fade">
+                <div id="Slide_Number">2/6</div>
+                    <img class="Slide_Show_Images" src="images/HTML_CSS_and_JavaScript.jpeg" style="width:100%;">
+                        <div class="text">I'm a full stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>      
+            </div>
+
+            <div class="mySlides fade">
+                <div id="Slide_Number">3/6</div>
+                    <img class="Slide_Show_Images" src="images/Python.png" style="width:100%;">
+                        <div class="text">the popular programming language python,</div>      
+            </div>
+
+            <div class="mySlides fade">
+                <div id="Slide_Number">4/6</div>
+                    <img class="Slide_Show_Images" src="images/C_Sharp_and_Dot_NET.png" style="width:100%;">
+                        <div class="text">C#, .NER framework, ASP.NET, MVC,</div>      
+            </div>
+
+            <div class="mySlides fade">
+                <div id="Slide_Number">5/6</div>
+                    <img class="Slide_Show_Images" src="images/GoogleCloud.png" style="width:100%;">
+                        <div class="text">Certified in Google Cloud Services</div>      
+            </div>
+
+            <div class="mySlides fade">
+                <div id="Slide_Number">6/6</div>
+                    <img class="Slide_Show_Images" src="images/JD.jpg" style="width:100%;">
+                        <div class="text">
+                        <a onclick="openForm()" href="#Contact" style="color: white;">Contact me now!</a>
+                        </div>      
+            </div>
+
+            <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+
+        </div>
+    <br>
+        <div style="text-align:center">
+
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(4)"></span> 
+            <span class="dot" onclick="currentSlide(5)"></span> 
+            <span class="dot" onclick="currentSlide(6)"></span>   
+
+        </div>
+    </div>
+</div>
 
 <!-- About Section -->
     <div class="Row" id="About">
@@ -66,7 +127,7 @@
 
 
         <div class="Column_2"> <!-- Right Column -->
-            <a href="https://github.com/zc-Coding" target="_blank"><img src="./images/github-sign.png" alt="GitHub logo"></a> 
+            <a href="https://github.com/zc-Coding" target="_blank"><img src="./images/GitHub.png" alt="GitHub logo"></a> 
         </div>
     </div>
 <!-- Contact section -->
@@ -76,25 +137,33 @@
     </div>
 
     <div class="Column_1"> <!-- Contact form, right column -->
-        <h2>Contact</h2>
-            <form action="" method="get"> <!-- This specifies where to send the form data and how; it is left blank -->
+        <div id="Contact">
+            <button onclick="openForm()" class="Pop_Up_Button"> CONTACT </button> 
+            <div class="form-popup" id="myForm">
+            <form action="https://formspace.io/zach.craig89@gmail.com" method="post" class="form-container"> <!-- This specifies where to send the form data and how; it is left blank -->
+                <h2>Contact</h2>
                 <label>Name:</label>
                     <input type="text" placeholder="Please enter your full name">
                 <label>Email:</label>
-                    <input type="text" id="Email" placeholder="Please enter your email here">
+                    <input type="email" id="Email" placeholder="Please enter your email here">
                 <label>Message:</label>
                     <input type="text" id="Message" placeholder="Please leave a messge here">
-                    <input type="submit" value="Submit">
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
             </form>
+            </div>
+        </div>
+       
     </div>
 </div>
 
 <!-- Footer -->
     <footer>
         <p>
-            <center><a href="https://github.com/zc-Coding">&copy zc-Coding co-op</a><br>
-            Icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></center>
+            <center><a href="https://github.com/zc-Coding">&copy zc-Coding co-op</a></center>
         </p>
-    </footer>
+        Icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+        </footer>
+        <script src="js/main.js"></script>
 </body>
 </html>
