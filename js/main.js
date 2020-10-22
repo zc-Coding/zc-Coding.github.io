@@ -4,7 +4,7 @@ function openForm() {
 }
 
 function closeForm() {
-    this.close();
+    document.getElementById("myForm").style.display = "none";
 }
 
 // This function covers the slideshow
