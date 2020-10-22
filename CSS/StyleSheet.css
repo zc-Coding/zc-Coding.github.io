@@ -176,7 +176,7 @@ body.fade-out {
     padding: 1vw;
     position: absolute;
     bottom: 0;
-    width: 100;
+    width: 100%;
     text-align: center;
     font-family: Perpetua, Rockwell extra bold;
     letter-spacing: .1vw;
@@ -401,7 +401,7 @@ img:hover {
 }
 
 /* Begin Submit button */
-.form-container .btn {
+.btn {
     background-color: black;
     color: white;
     font-weight: bold;
@@ -482,7 +482,7 @@ h2:hover {
 }
 
 /* image element hover */
-img:hover {
+#Slidesshow_Container:hover {
     filter: grayscale(5%);
     transition: transform 1s;
     transform: scale(1.1);
