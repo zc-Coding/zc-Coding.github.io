@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Freelancer - Start Bootstrap Theme</title>
+        <title>Zachary H. Craig</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -111,7 +111,7 @@
                 <!-- About Section Content-->
                 <div class="row">
                     <div class="col-lg-4 ml-auto"><p class="lead">I grew up in Metro Detroit and now live in Salt Lake City. I'm currently a chef by profession putting 14 years into the industry, running two kitchens as the Chef and was a Sous Chef at 3 more. I pride myself on being polite and easy to work with.<br><br>“Tell me and I forget, teach me and I may remember, involve me and I learn.” - Benjamin Franklin</p></div>
-                    <div class="col-lg-4 mr-auto"><p class="lead">I'm interested in front-end design and UI/UX. I have worked with HTML5, CSS3, JS vanilla for front end developement. I have a certificate from The Tech Academy in C# and .NET Framework, which included ADO.NET, Razor syntax and using Azure to host web apps. I'm familiar with the MVC methodolgy. I have worked on teams using Agile and Scrum.</p></div>
+                    <div class="col-lg-4 mr-auto"><p class="lead">I'm interested in full-stack, front-end design, UI/UX design and cybersecurity. I have worked with HTML5, CSS3, JS vanilla for front end developement. I have a certificate from The Tech Academy in C# and .NET Framework, which included ADO.NET, Razor syntax and using Azure Devops. I'm familiar with the MVC methodolgy. I have worked on teams using Agile and Scrum methodologies.</p></div>
                 </div>
                 <!-- About Section Row of Buttons -->
                 <div class="row d-flex justify-content-center">
@@ -145,8 +145,8 @@
                 <!-- Contact Section Form-->
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
-                        <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
-                        <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                        <!-- Formspree contact form, use ajax?-->
+                        <form id="my-form-contact" name="sentMessage" novalidate="novalidate" action="https://formspree.io/f/xyyblzpk" method="POST">
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Name</label>
@@ -177,7 +177,8 @@
                             </div>
                             <br />
                             <div id="success"></div>
-                            <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Send</button></div>
+                            <div class="form-group"><button class="btn btn-primary btn-xl" id="my-form-button">Send</button></div>
+                            <p id="my-form-status"></p>
                         </form>
                     </div>
                 </div>
@@ -338,10 +339,59 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Contact form JS-->
+        <!-- Contact form JS
         <script src="assets/mail/jqBootstrapValidation.js"></script>
-        <script src="assets/mail/contact_me.js"></script>
+        <script src="assets/mail/contact_me.js"></script>-->
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        <!-- Formspree AJAX scripting-->
+        <script>
+            window.addEventListener("DOMContentLoaded", function() {
+          
+              // get the form elements defined in your form HTML above
+              
+              var form = document.getElementById("my-form-contact");
+              var button = document.getElementById("my-form-button");
+              var status = document.getElementById("my-form-status");
+          
+              // Success and Error functions for after the form is submitted
+              
+              function success() {
+                form.reset();
+                button.style = "display: none ";
+                status.innerHTML = "Thanks!";
+              }
+          
+              function error() {
+                status.innerHTML = "Oops! There was a problem.";
+              }
+          
+              // handle the form submission event
+          
+              form.addEventListener("submit", function(ev) {
+                ev.preventDefault();
+                var data = new FormData(form);
+                ajax(form.method, form.action, data, success, error);
+              });
+            });
+            
+            // helper function for sending an AJAX request
+          
+            function ajax(method, url, data, success, error) {
+              var xhr = new XMLHttpRequest();
+              xhr.open(method, url);
+              xhr.setRequestHeader("Accept", "application/json");
+              xhr.onreadystatechange = function() {
+                if (xhr.readyState !== XMLHttpRequest.DONE) return;
+                if (xhr.status === 200) {
+                  success(xhr.response, xhr.responseType);
+                } else {
+                  error(xhr.status, xhr.response, xhr.responseType);
+                }
+              };
+              xhr.send(data);
+            }
+          </script>
     </body>
 </html>
