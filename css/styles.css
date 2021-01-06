@@ -448,7 +448,7 @@ textarea.form-control {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-}
+
 .btn:hover {
   color: #212529;
   text-decoration: none;
@@ -481,7 +481,7 @@ textarea.form-control {
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: ##878f14;
+  background-color: #878f14;
   border-color: #12846e;
 }
 .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {
@@ -2263,7 +2263,7 @@ a.badge:hover, a.badge:focus {
 }
 a.badge-primary:hover, a.badge-primary:focus {
   color: #fff;
-  background-color: ##878f14;
+  background-color: #878f14;
 }
 a.badge-primary:focus, a.badge-primary.focus {
   outline: 0;
